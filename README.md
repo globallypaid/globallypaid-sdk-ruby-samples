@@ -1,24 +1,30 @@
-# README
+# Installation
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> Install RVM
 
-Things you may want to cover:
+See the installation steps here: https://rvm.io/
 
-* Ruby version
+> Install Ruby 2.7.2
 
-* System dependencies
+```bash
+$ rvm install 2.7.2
+```
 
-* Configuration
+> Install the gems with bundler
 
-* Database creation
+```bash
+$ bundle install
+```
 
-* Database initialization
+> Install Javascript libraries with yarn
 
-* How to run the test suite
+```bash
+$ yarn install
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+> Start the rails application
 
-* Deployment instructions
+```bash
+$ rails server
+```
 
-* ...

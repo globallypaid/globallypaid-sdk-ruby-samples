@@ -1,5 +1,6 @@
-PATH
-  remote: ../active_merchant
+GIT
+  remote: https://github.com/globallypaid/globallypaid-sdk-ruby.git
+  revision: 060a08c48f518460f4da3a0872eb5b2757e3cc97
   specs:
     activemerchant (1.117.0)
       activesupport (>= 4.2)

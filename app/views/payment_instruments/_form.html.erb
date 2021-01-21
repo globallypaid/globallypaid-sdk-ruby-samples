@@ -12,18 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :type %>
-    <%= form.number_field :type %>
+    <%= form.label :instrument_type %>
+    <%= form.select :instrument_type, ["Credit Card"] %>
+  </div>
+
+  <div class="field">
+    <%= form.label :credit_card_number %>
+    <%= form.text_field :creadit_card_number %>
   </div>
 
   <div class="field">
     <%= form.label :client_id %>
-    <%= form.text_field :client_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :billing_contact %>
-    <%= form.number_field :billing_contact %>
+    <%= form.select :client_id, %w[] %>
   </div>
 
   <div class="actions">

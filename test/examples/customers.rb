@@ -23,5 +23,5 @@ ap response.params
 ap "Deleting the customer..."
 customer_id = response.params["id"]
 
-response = gateway.delete_customer(customer_id)
-ap response.params
+# response = gateway.delete_customer(customer_id)
+# ap response.params

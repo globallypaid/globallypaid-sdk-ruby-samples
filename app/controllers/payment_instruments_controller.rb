@@ -4,6 +4,7 @@ class PaymentInstrumentsController < ApplicationController
   # GET /payment_instruments
   # GET /payment_instruments.json
   def index    
+
     result = @gateway.list_payment_instruments('cus_x3r5d8AiG0q2OVbpZdvRdQ')
     @payment_instruments = JSON.parse(result.success?)
   end
@@ -16,6 +17,8 @@ class PaymentInstrumentsController < ApplicationController
 
   # GET /payment_instruments/new
   def new
+    result = @gateway.list_customers
+    @customers = JSON.parse(result.success?)      
     @payment_instrument = PaymentInstrument.new
   end
 
@@ -27,6 +30,29 @@ class PaymentInstrumentsController < ApplicationController
   # POST /payment_instruments.json
   def create
     @payment_instrument = PaymentInstrument.new(payment_instrument_params)
+
+    paymentinstrument_data = {
+      "type" => "CreditCard",
+      "customer_id" => "cus_gHJuy8OR1UGrIfuyyvmyHQ	",
+      "client_customer_id" => "1474687",
+      "brand" => "Visa",
+      "last_four" => "7117",
+      "expiration" => "0627",
+      "creditcard" => credit_card_gp(4111111111111111),
+      "billing_contact" => {
+          "first_name" => "Test",
+           "last_name" => "Tester",
+             "address" => {
+                       "line_1" => "123 Main St",
+                       "line_2" => nil,
+                         "city" => "NYC",
+                        "state" => "NY",
+                  "postal_code" => "92657",
+                      "country" => "United States"
+          }
+      }
+  }
+  gateway.create_paymentinstrument(paymentinstrument_data)
 
     respond_to do |format|
       if @payment_instrument.save

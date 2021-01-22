@@ -4,6 +4,13 @@ require 'awesome_print'
 
 ActiveMerchant::Billing::Base.mode = :test
 
+
+if ENV['DEBUG_ACTIVE_MERCHANT'] == 'true'
+    require 'logger'
+    ActiveMerchant::Billing::Gateway.logger = Logger.new(STDOUT)
+    ActiveMerchant::Billing::Gateway.wiredump_device = STDOUT
+  end
+
 @credentials = {
     :publishable_api_key => 'pk_test_pr9IokgZOcNd0YGLuW3unrvYvLoIkCCk', 
     :app_id => 'sk_test_3a164632-7951-4688-9d49-c9c5', 

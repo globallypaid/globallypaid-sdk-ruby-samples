@@ -19,10 +19,23 @@ paymentinstrument_data = {
             "client_customer_id" => "1474687",
             "brand" => "Visa",
             "last_four" => "7117",
-            "expiration" => "0627"
-}
+            "expiration" => "0627",
+            "creditcard" => credit_card_gp(4111111111111111),
+            "billing_contact" => {
+                "first_name" => "Test",
+                 "last_name" => "Tester",
+                   "address" => {
+                             "line_1" => "123 Main St",
+                             "line_2" => nil,
+                               "city" => "NYC",
+                              "state" => "NY",
+                        "postal_code" => "92657",
+                            "country" => "United States"
+                }
+            }
+        }
 response = gateway.create_paymentinstrument(paymentinstrument_data)
 ap response.params  
 
 puts "Deleting the payment instrument..."
-response = gateway.delete_paymentinstrument(response.params["id"])
+# response = gateway.delete_paymentinstrument(response.params["id"])

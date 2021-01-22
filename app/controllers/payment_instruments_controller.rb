@@ -52,7 +52,7 @@ class PaymentInstrumentsController < ApplicationController
           }
       }
   }
-  gateway.create_paymentinstrument(paymentinstrument_data)
+  @gateway.create_paymentinstrument(paymentinstrument_data)
 
     respond_to do |format|
       if @payment_instrument.save

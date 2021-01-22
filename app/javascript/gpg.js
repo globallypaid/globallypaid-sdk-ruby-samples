@@ -21,10 +21,9 @@ $(() => {
   cardExtended.on(
     "TOKEN_CREATION",
     (tokenPayload) => {
-      console.log('Token payload: ', tokenPayload);
       $.ajax({
         type: "POST",
-        url: "http://192.168.4.1:4000/payments",
+        url: "http://localhost:4000/payments",
         contentType: "application/json",
         dataType: "json",
         processData: false,
@@ -36,7 +35,7 @@ $(() => {
         //   tokenid: tokenPayload.Token,
         // }),
         success: (response) => {
-          if (response.responsecode === "00") {
+          if (response.responseText === "Approved") {
             console.log('Success', response);
             cardExtended.showSuccess();
           } else {
@@ -44,9 +43,14 @@ $(() => {
           }
           console.log(response);
         },
-        error: (error) => {
-          console.log('Success');
-          cardExtended.showSuccess();
+        error: (response) => {
+          if (response.responseText === "Approved") {
+            console.log('Success', response);
+            cardExtended.showSuccess();
+          } else {
+            cardExtended.showError("Transaction failed");
+          }
+          console.log(response);
         },
       });
     },

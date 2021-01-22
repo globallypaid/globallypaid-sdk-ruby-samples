@@ -24,6 +24,5 @@ paymentinstrument_data = {
 response = gateway.create_paymentinstrument(paymentinstrument_data)
 ap response.params  
 
-
 puts "Deleting the payment instrument..."
 response = gateway.delete_paymentinstrument(response.params["id"])

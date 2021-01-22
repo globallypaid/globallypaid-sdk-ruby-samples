@@ -15,5 +15,10 @@ module Globallypaid
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    # Override the logger
+    config.logger = Logger.new(config.paths["log"].first)
+    config.logger.formatter = Beautiful::Log::Formatter.new
+
   end
 end

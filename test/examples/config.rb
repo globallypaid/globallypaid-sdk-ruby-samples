@@ -1,3 +1,7 @@
+ENV['RAILS_ENV'] ||= 'test'
+require_relative '../../config/environment'
+require 'awesome_print'
+
 ActiveMerchant::Billing::Base.mode = :test
 
 @credentials = {

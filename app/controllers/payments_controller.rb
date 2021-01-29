@@ -11,7 +11,7 @@ class PaymentsController < ApplicationController
   def create
     puts "Params: " + params.inspect
     @options.merge!({"id" => params["id"]})
-    response = @gateway.charge(@amount, credit_card_gp("4111111111111111"), @options)
+    response = @gateway.charge(@amount, credit_card_gp("4111111111111111"), params)
     
     puts "Response: #{response.inspect}"
 

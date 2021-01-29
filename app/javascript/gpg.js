@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { GloballyPaidSDK} from '@globallypaid/js-sdk';
+// import { GloballyPaidSDK} from '@globallypaid/js-sdk';
 
 
 $(() => {

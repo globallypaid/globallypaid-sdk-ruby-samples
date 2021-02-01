@@ -1,5 +1,6 @@
-PATH
-  remote: ../globallypaid-sdk-ruby
+GIT
+  remote: https://github.com/globallypaid/globallypaid-sdk-ruby.git
+  revision: a4f922f895e850889f068cb1f771478a32179cfd
   specs:
     activemerchant (1.117.0)
       activesupport (>= 4.2)
@@ -90,6 +91,7 @@ GEM
     crass (1.0.6)
     erubi (1.10.0)
     ffi (1.14.2)
+    ffi (1.14.2-x64-mingw32)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.8.7)
@@ -112,9 +114,12 @@ GEM
     mini_portile2 (2.5.0)
     minitest (5.14.3)
     msgpack (1.3.3)
+    msgpack (1.3.3-x64-mingw32)
     nio4r (2.5.4)
     nokogiri (1.11.1)
       mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
+    nokogiri (1.11.1-x64-mingw32)
       racc (~> 1.4)
     public_suffix (4.0.6)
     puma (4.3.7)
@@ -161,6 +166,8 @@ GEM
       sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
       ffi (~> 1.9)
+    sassc (2.4.0-x64-mingw32)
+      ffi (~> 1.9)
     sassc-rails (2.1.2)
       railties (>= 4.0.0)
       sassc (>= 2.0)
@@ -190,6 +197,8 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (1.2.9)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2021.1)
+      tzinfo (>= 1.0.0)
     web-console (4.1.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -212,6 +221,7 @@ GEM
 
 PLATFORMS
   ruby
+  x64-mingw32
 
 DEPENDENCIES
   activemerchant!
@@ -236,7 +246,7 @@ DEPENDENCIES
   webpacker (~> 4.0)
 
 RUBY VERSION
-   ruby 2.7.2p137
+   ruby 2.6.6p146
 
 BUNDLED WITH
    2.2.4

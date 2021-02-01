@@ -29,8 +29,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 # Active merchant
-# gem 'activemerchant', github: 'globallypaid/globallypaid-sdk-ruby'
-gem 'activemerchant', path: '../globallypaid-sdk-ruby'
+ gem 'activemerchant', github: 'globallypaid/globallypaid-sdk-ruby'
+#gem 'activemerchant', path: '../globallypaid-sdk-ruby'
 
 # Pretty logs
 gem 'beautiful-log'

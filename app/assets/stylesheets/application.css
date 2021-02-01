@@ -15,10 +15,10 @@
  */
 
  .sidebar {
-     width: 15%;
-     float: left;
-     height: 100vw;
-     margin: 0;
+     width: 20%;
+    float: left;
+    height: 100vw;
+    margin-right: 20px;
  }
  
  .sidebar li {
@@ -39,6 +39,8 @@
 
  .main {
      float: left;
+     max-width: 75%;
+    padding-bottom: 150px;
  }
 
 .logo img {
@@ -52,4 +54,5 @@
     border-radius: 5px;
     padding: 10px;
     filter: drop-shadow(10px 5px 10px #777);
+    overflow: auto;
 }

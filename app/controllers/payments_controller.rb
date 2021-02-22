@@ -4,13 +4,14 @@ class PaymentsController < ApplicationController
   skip_forgery_protection
 
   def index
-    auth = @gateway.authorize(@amount, @credit_card, @options)
-    @gateway.capture(@amount, auth.authorization)
+    ap "index..."
+    # auth = @gateway.authorize(@amount, @credit_card, @options)
+    # @gateway.capture(@amount, auth.authorization)
   end
 
   def create
-    @options.merge!({"id" => params["id"]})
-    response = @gateway.charge(@amount, credit_card_gp("4111111111111111"), @options)
+    ap "Create puechase. Payment..." + params["id"]
+    response = @gateway.purchase(123, params["id"], @charge_customer_data)
     
     puts "Response: #{response.inspect}"
 

@@ -13,7 +13,8 @@ class ApplicationController < ActionController::Base
             sandbox: true            
         )
         @amount = 123
-        @credit_card = credit_card_gp('41111111111111')
+        @valid_credit_card_number = '41111111111111'
+        @credit_card = credit_card_gp(@valid_credit_card_number)
         @declined_card = credit_card_gp('4000300011112220')
         @options = {
           billing_contact: billing_contact,
@@ -25,16 +26,28 @@ class ApplicationController < ActionController::Base
           client_invoice_id: "758496",
           currency_code: "USD"
         }
-        @customer_id = 'cus_x3r5d8AiG0q2OVbpZdvRdQ'        
+        @customer_id = 'cus_x3r5d8AiG0q2OVbpZdvRdQ'
+        @charge_customer_data = {
+          client_customer_id: "1474687",
+          client_transaction_id: "154896575",
+          client_transaction_description: "Charge With Token from Ruby",
+          client_invoice_id: "758496",
+          currency_code: "USD",
+          country_code: "US",
+          cof_type: "UNSCHEDULED_CARDHOLDER",
+          save_payment_instrument: false,
+          avs: false,
+          cvv: false
+        }     
     end
 
     def billing_contact
         billing_contact = {}
-        billing_contact[:first_name] = "Peco"
-        billing_contact[:last_name] = "Danajlovski"
+        billing_contact[:first_name] = "Joe"
+        billing_contact[:last_name] = "Doe"
         billing_contact[:address] = address
         billing_contact[:phone] = "070261666"
-        billing_contact[:email] = "peco.danajlovski@gmail.com"
+        billing_contact[:email] = "joe.doe@gmail.com"
         billing_contact
       end
     

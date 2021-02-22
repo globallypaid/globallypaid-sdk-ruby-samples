@@ -12,18 +12,31 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :instrument_type %>
-    <%= form.select :instrument_type, ["Credit Card"] %>
+    <%= form.label :type %>
+    <%= form.select :type, ["CreditCard"] %>
   </div>
 
   <div class="field">
     <%= form.label :credit_card_number %>
-    <%= form.text_field :creadit_card_number %>
+    <%= form.text_field :credit_card_number, value: @valid_credit_card_number %>
   </div>
 
   <div class="field">
-    <%= form.label :client_id %>
-    <%= form.select :client_id, @customers.map { |obj| obj["first_name"] + " " + obj["last_name"] } %>
+    <%= form.label :customer_id %>
+    <%= form.select :customer_id, [@customer_id] %>
+    <% if false %>
+    <%= form.select :customer_id, @customers.map { |obj| obj["id"] } %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
   </div>
 
   <div class="actions">

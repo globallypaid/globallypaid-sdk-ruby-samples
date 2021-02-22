@@ -38,7 +38,7 @@ class CustomersController < ApplicationController
   # PATCH/PUT /customers/1
   # PATCH/PUT /customers/1.json
   def update
-    @gateway.create_customer(customer_params.to_h)
+    @gateway.update_customer(customer_params[:id], customer_params.to_h)
 
     respond_to do |format|
       format.html { redirect_to customers_url, notice: 'Customer was successfully created.' }
@@ -48,7 +48,7 @@ class CustomersController < ApplicationController
   # DELETE /customers/1
   # DELETE /customers/1.json
   def destroy
-    @customer.destroy
+    @gateway.delete_customer(customer_params[:id])
     respond_to do |format|
       format.html { redirect_to customers_url, notice: 'Customer was successfully destroyed.' }
       format.json { head :no_content }

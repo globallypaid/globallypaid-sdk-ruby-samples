@@ -1,11 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Payment Instruments</h1>
+<h1>Payment Instruments for <%= @customer_id %></h1>
 
 <div class='wrapper'>
   <table>
     <thead>
       <tr>
+        <th>Id</th>
         <th>Type</th>
         <th>Client</th>
         <th>Customer</th>
@@ -17,10 +18,11 @@
     <tbody>
       <% @payment_instruments.each do |payment_instrument| %>
         <tr>
+          <td><%= payment_instrument["id"] %></td>
           <td><%= payment_instrument["type"] %></td>
           <td><%= payment_instrument["client_id"] %></td>
           <td><%= payment_instrument["customer_id"] %></td>
-          <td><%= payment_instrument["billing_contact"]["first_name"] %></td>
+          <td><%= payment_instrument["billing_contact"]["first_name"] + " " + payment_instrument["billing_contact"]["last_name"] %></td>
         </tr>
       <% end %>
     </tbody>

@@ -29,39 +29,20 @@ class PaymentInstrumentsController < ApplicationController
   # POST /payment_instruments
   # POST /payment_instruments.json
   def create
-    @payment_instrument = PaymentInstrument.new(payment_instrument_params)
+    @options[:billing_contact][:first_name] = payment_instrument_params[:first_name]
+    @options[:billing_contact][:last_name] = payment_instrument_params[:last_name]
 
     paymentinstrument_data = {
-      "type" => "CreditCard",
-      "customer_id" => "cus_gHJuy8OR1UGrIfuyyvmyHQ	",
-      "client_customer_id" => "1474687",
-      "brand" => "Visa",
-      "last_four" => "7117",
-      "expiration" => "0627",
-      "creditcard" => credit_card_gp(4111111111111111),
-      "billing_contact" => {
-          "first_name" => "Test",
-           "last_name" => "Tester",
-             "address" => {
-                       "line_1" => "123 Main St",
-                       "line_2" => nil,
-                         "city" => "NYC",
-                        "state" => "NY",
-                  "postal_code" => "92657",
-                      "country" => "United States"
-          }
-      }
-  }
-  @gateway.create_paymentinstrument(paymentinstrument_data)
-
+      "type" => payment_instrument_params[:type],
+      "customer_id" => payment_instrument_params[:customer_id],
+      "client_customer_id" => @options[:client_customer_id],
+      "creditcard" => credit_card_gp(payment_instrument_params[:credit_card_number]),
+      "billing_contact" => @options[:billing_contact]
+    }
+    @gateway.create_paymentinstrument(paymentinstrument_data)
+    
     respond_to do |format|
-      if @payment_instrument.save
-        format.html { redirect_to @payment_instrument, notice: 'Payment instrument was successfully created.' }
-        format.json { render :show, status: :created, location: @payment_instrument }
-      else
-        format.html { render :new }
-        format.json { render json: @payment_instrument.errors, status: :unprocessable_entity }
-      end
+      format.html { redirect_to payment_instruments_url, notice: 'PaymentInstrument was successfully created.' }
     end
   end
 
@@ -97,6 +78,6 @@ class PaymentInstrumentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def payment_instrument_params
-      params.require(:payment_instrument).permit(:type, :client_id, :customer_id, :billing_contact)
+      params.require(:payment_instrument).permit(:type, :customer_id, :credit_card_number, :first_name, :last_name)
     end
 end

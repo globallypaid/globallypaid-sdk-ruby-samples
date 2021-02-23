@@ -37,6 +37,6 @@ response_update_customer = gateway.update_customer(customer_id, customer_data)
 ap response_update_customer
 
 ap "Delete the customer..."
-response_delete_customer = gateway.delete_customer('cus_0G8v0pu87EOZjKbraOpfQA')
+response_delete_customer = gateway.delete_customer(customer_id)
 ap response_delete_customer
 

@@ -7,12 +7,12 @@ class ApplicationController < ActionController::Base
 
     def load_gateway
         @gateway = ActiveMerchant::Billing::GloballyPaidGateway.new(
-            publishable_api_key: 'pk_test_pr9IokgZOcNd0YGLuW3unrvYvLoIkCCk',
-            app_id: 'sk_test_3a164632-7951-4688-9d49-c9c5',
-            shared_secret: 'u9TQah3vzkLjsiB/vB6+C9tuQhjvO8/3h+XB2YTaxr0=',
+            publishable_api_key: '------',
+            app_id: '------',
+            shared_secret: '------',
             sandbox: true            
         )
-        @amount = 123
+        @amount = 99
         @valid_credit_card_number = '41111111111111'
         @credit_card = credit_card_gp(@valid_credit_card_number)
         @declined_card = credit_card_gp('4000300011112220')
@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
           client_invoice_id: "758496",
           currency_code: "USD"
         }
-        @customer_id = 'cus_x3r5d8AiG0q2OVbpZdvRdQ'
+        @customer_id = 'cus_urYNN2Zk0kehHLmilAasFA'
         @charge_customer_data = {
           client_customer_id: "1474687",
           client_transaction_id: "154896575",
@@ -36,8 +36,7 @@ class ApplicationController < ActionController::Base
           country_code: "US",
           cof_type: "UNSCHEDULED_CARDHOLDER",
           save_payment_instrument: false,
-          avs: false,
-          cvv: false
+          avs: false
         }     
     end
 

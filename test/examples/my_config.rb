@@ -12,9 +12,9 @@ if ENV['DEBUG_ACTIVE_MERCHANT'] == 'true'
   end
 
 @credentials = {
-    :publishable_api_key => 'pk_test_pr9IokgZOcNd0YGLuW3unrvYvLoIkCCk', 
-    :app_id => 'sk_test_3a164632-7951-4688-9d49-c9c5', 
-    :shared_secret => 'u9TQah3vzkLjsiB/vB6+C9tuQhjvO8/3h+XB2YTaxr0=', 
+    :publishable_api_key => '-----', 
+    :app_id => '-----', 
+    :shared_secret => '-----', 
     :sandbox => true
 }
 
@@ -68,8 +68,7 @@ end
     country_code: "US",
     cof_type: "UNSCHEDULED_CARDHOLDER",
     save_payment_instrument: false,
-    avs: false,
-    cvv: false
+    avs: false
 }
 
   # credit_card = ActiveMerchant::Billing::CreditCard.new(

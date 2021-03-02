@@ -9,7 +9,7 @@ payment = 'tok_WfyI3AXK_E2id1p3GlIJ9g'
 ap "Payment: " + payment
 
 ap "Calling Authorize..."
-auth_response = gateway.authorize(123, token_id, @charge_customer_data)
+auth_response = gateway.authorize(99, token_id, @charge_customer_data)
 
 ap "Authorize Response: "
 ap auth_response
@@ -18,7 +18,7 @@ ap "Authorization: "
 ap auth_response.authorization
 
 ap "Calling capture..."
-capture_response = gateway.capture(123, auth_response.authorization)
+capture_response = gateway.capture(99, auth_response.authorization)
 
 ap "Capture Response: "
 ap capture_response

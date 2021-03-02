@@ -5,7 +5,7 @@ import $ from 'jquery';
 $(() => {
   window.GloballyPaidSDK = GloballyPaidSDK;
 
-  const gpg = new GloballyPaidSDK("pk_test_pr9IokgZOcNd0YGLuW3unrvYvLoIkCCk");
+  const gpg = new GloballyPaidSDK("pk_test_7H5GkZJ4ktV38eZxKDItVMZZvluUhORE");
   
   const cardExtended = gpg.createForm("card-extended", {
     style: {

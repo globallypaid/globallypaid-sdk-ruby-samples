@@ -11,7 +11,7 @@ class PaymentsController < ApplicationController
 
   def create
     ap "Create puechase. Payment..." + params["id"]
-    response = @gateway.purchase(123, params["id"], @charge_customer_data)
+    response = @gateway.purchase(@amount, params["id"], @charge_customer_data)
     
     puts "Response: #{response.inspect}"
 

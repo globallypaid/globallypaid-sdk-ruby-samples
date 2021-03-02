@@ -5,7 +5,7 @@ class PaymentInstrumentsController < ApplicationController
   # GET /payment_instruments.json
   def index    
 
-    result = @gateway.list_payment_instruments('cus_x3r5d8AiG0q2OVbpZdvRdQ')
+    result = @gateway.list_payment_instruments(@customer_id)
     @payment_instruments = JSON.parse(result.success?)
   end
 

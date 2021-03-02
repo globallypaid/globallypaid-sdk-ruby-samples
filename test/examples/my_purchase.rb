@@ -9,7 +9,7 @@ payment = 'tok_WfyI3AXK_E2id1p3GlIJ9g'
 ap "Payment: " + payment
 
 ap "Calling Purchase..."
-response = gateway.purchase(123, payment, @charge_customer_data)
+response = gateway.purchase(99, payment, @charge_customer_data)
 
 ap "Purchase Response: "
 ap response

@@ -1,4 +1,4 @@
-require './config'
+require './my_config'
 
 # Initialize the gateway
 ap "Initializing the gateway..."
@@ -29,6 +29,7 @@ ap JSON.parse(response)
 
 ap "Update customer..."
 customer_data = {
+    'id' => customer_id,
     'client_customer_id' => '1474777',
     'first_name' => 'Joe_Updated',
     'last_name' => 'Doe_Updated'

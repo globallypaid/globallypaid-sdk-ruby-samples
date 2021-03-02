@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/globallypaid/globallypaid-sdk-ruby.git
-  revision: 573359f17d1bb03c56070e6131691bc5aab2e23f
+  revision: f35eb2880e44d0ffa20132f4195dc648543783ce
   specs:
     activemerchant (1.117.0)
       activesupport (>= 4.2)

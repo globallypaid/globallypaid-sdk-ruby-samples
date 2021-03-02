@@ -9,7 +9,7 @@ payment = 'tok_WfyI3AXK_E2id1p3GlIJ9g'
 ap "Payment: " + payment
 
 ap "Calling Authorize..."
-response = gateway.authorize(123, payment, @charge_customer_data)
+response = gateway.authorize(99, payment, @charge_customer_data)
 
 ap "Authorize Response: "
 ap response
